@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Simple Battleship</title>
+	<meta charset="UTF-8" />
+  <link rel="stylesheet" type="text/css" href="./style.css">
+</head>
+
+<body>
+	<div id="app">
+		<div class="columns">
+			<div class="column">
+				<h2>Your Board</h2>
+				<div class="grid" id="player-grid">
+					<div class="row">
+						<div class="col header"></div>
+						<div class="col header">A</div>
+						<div class="col header">B</div>
+						<div class="col header">C</div>
+						<div class="col header">D</div>
+						<div class="col header">E</div>
+						<div class="col header">F</div>
+						<div class="col header">G</div>
+						<div class="col header">H</div>
+						<div class="col header">I</div>
+						<div class="col header">J</div>
+					</div>
+					<div class="row">
+						<div class="col header">01</div>
+						<div class="col selectable player" id="coord-1" data-coord="1"></div>
+						<div class="col selectable player" id="coord-2" data-coord="2"></div>
+						<div class="col selectable player" id="coord-3" data-coord="3"></div>
+						<div class="col selectable player" id="coord-4" data-coord="4"></div>
+						<div class="col selectable player" id="coord-5" data-coord="5"></div>
+						<div class="col selectable player" id="coord-6" data-coord="6"></div>
+						<div class="col selectable player" id="coord-7" data-coord="7"></div>
+						<div class="col selectable player" id="coord-8" data-coord="8"></div>
+						<div class="col selectable player" id="coord-9" data-coord="9"></div>
+						<div class="col selectable player" id="coord-10" data-coord="10"></div>
+					</div>
+					<div class="row">
+						<div class="col header">02</div>
+						<div class="col selectable player" id="coord-11" data-coord="11"></div>
+						<div class="col selectable player" id="coord-12" data-coord="12"></div>
+						<div class="col selectable player" id="coord-13" data-coord="13"></div>
+						<div class="col selectable player" id="coord-14" data-coord="14"></div>
+						<div class="col selectable player" id="coord-15" data-coord="15"></div>
+						<div class="col selectable player" id="coord-16" data-coord="16"></div>
+						<div class="col selectable player" id="coord-17" data-coord="17"></div>
+						<div class="col selectable player" id="coord-18" data-coord="18"></div>
+						<div class="col selectable player" id="coord-19" data-coord="19"></div>
+						<div class="col selectable player" id="coord-20" data-coord="20"></div>
+					</div>
+					<div class="row">
+						<div class="col header">03</div>
+						<div class="col selectable player" id="coord-21" data-coord="21"></div>
+						<div class="col selectable player" id="coord-22" data-coord="22"></div>
+						<div class="col selectable player" id="coord-23" data-coord="23"></div>
+						<div class="col selectable player" id="coord-24" data-coord="24"></div>
+						<div class="col selectable player" id="coord-25" data-coord="25"></div>
+						<div class="col selectable player" id="coord-26" data-coord="26"></div>
+						<div class="col selectable player" id="coord-27" data-coord="27"></div>
+						<div class="col selectable player" id="coord-28" data-coord="28"></div>
+						<div class="col selectable player" id="coord-29" data-coord="29"></div>
+						<div class="col selectable player" id="coord-30" data-coord="30"></div>
+					</div>
+					<div class="row">
+						<div class="col header">04</div>
+						<div class="col selectable player" id="coord-31" data-coord="31"></div>
+						<div class="col selectable player" id="coord-32" data-coord="32"></div>
+						<div class="col selectable player" id="coord-33" data-coord="33"></div>
+						<div class="col selectable player" id="coord-34" data-coord="34"></div>
+						<div class="col selectable player" id="coord-35" data-coord="35"></div>
+						<div class="col selectable player" id="coord-36" data-coord="36"></div>
+						<div class="col selectable player" id="coord-37" data-coord="37"></div>
+						<div class="col selectable player" id="coord-38" data-coord="38"></div>
+						<div class="col selectable player" id="coord-39" data-coord="39"></div>
+						<div class="col selectable player" id="coord-40" data-coord="40"></div>
+					</div>
+					<div class="row">
+						<div class="col header">05</div>
+						<div class="col selectable player" id="coord-41" data-coord="41"></div>
+						<div class="col selectable player" id="coord-42" data-coord="42"></div>
+						<div class="col selectable player" id="coord-43" data-coord="43"></div>
+						<div class="col selectable player" id="coord-44" data-coord="44"></div>
+						<div class="col selectable player" id="coord-45" data-coord="45"></div>
+						<div class="col selectable player" id="coord-46" data-coord="46"></div>
+						<div class="col selectable player" id="coord-47" data-coord="47"></div>
+						<div class="col selectable player" id="coord-48" data-coord="48"></div>
+						<div class="col selectable player" id="coord-49" data-coord="49"></div>
+						<div class="col selectable player" id="coord-50" data-coord="50"></div>
+					</div>
+					<div class="row">
+						<div class="col header">06</div>
+						<div class="col selectable player" id="coord-51" data-coord="51"></div>
+						<div class="col selectable player" id="coord-52" data-coord="52"></div>
+						<div class="col selectable player" id="coord-53" data-coord="53"></div>
+						<div class="col selectable player" id="coord-54" data-coord="54"></div>
+						<div class="col selectable player" id="coord-55" data-coord="55"></div>
+						<div class="col selectable player" id="coord-56" data-coord="56"></div>
+						<div class="col selectable player" id="coord-57" data-coord="57"></div>
+						<div class="col selectable player" id="coord-58" data-coord="58"></div>
+						<div class="col selectable player" id="coord-59" data-coord="59"></div>
+						<div class="col selectable player" id="coord-60" data-coord="60"></div>
+					</div>
+					<div class="row">
+						<div class="col header">07</div>
+						<div class="col selectable player" id="coord-61" data-coord="61"></div>
+						<div class="col selectable player" id="coord-62" data-coord="62"></div>
+						<div class="col selectable player" id="coord-63" data-coord="63"></div>
+						<div class="col selectable player" id="coord-64" data-coord="64"></div>
+						<div class="col selectable player" id="coord-65" data-coord="65"></div>
+						<div class="col selectable player" id="coord-66" data-coord="66"></div>
+						<div class="col selectable player" id="coord-67" data-coord="67"></div>
+						<div class="col selectable player" id="coord-68" data-coord="68"></div>
+						<div class="col selectable player" id="coord-69" data-coord="69"></div>
+						<div class="col selectable player" id="coord-70" data-coord="70"></div>
+					</div>
+					<div class="row">
+						<div class="col header">08</div>
+						<div class="col selectable player" id="coord-71" data-coord="71"></div>
+						<div class="col selectable player" id="coord-72" data-coord="72"></div>
+						<div class="col selectable player" id="coord-73" data-coord="73"></div>
+						<div class="col selectable player" id="coord-74" data-coord="74"></div>
+						<div class="col selectable player" id="coord-75" data-coord="75"></div>
+						<div class="col selectable player" id="coord-76" data-coord="76"></div>
+						<div class="col selectable player" id="coord-77" data-coord="77"></div>
+						<div class="col selectable player" id="coord-78" data-coord="78"></div>
+						<div class="col selectable player" id="coord-79" data-coord="79"></div>
+						<div class="col selectable player" id="coord-80" data-coord="80"></div>
+					</div>
+					<div class="row">
+						<div class="col header">09</div>
+						<div class="col selectable player" id="coord-81" data-coord="81"></div>
+						<div class="col selectable player" id="coord-82" data-coord="82"></div>
+						<div class="col selectable player" id="coord-83" data-coord="83"></div>
+						<div class="col selectable player" id="coord-84" data-coord="84"></div>
+						<div class="col selectable player" id="coord-85" data-coord="85"></div>
+						<div class="col selectable player" id="coord-86" data-coord="86"></div>
+						<div class="col selectable player" id="coord-87" data-coord="87"></div>
+						<div class="col selectable player" id="coord-88" data-coord="88"></div>
+						<div class="col selectable player" id="coord-89" data-coord="89"></div>
+						<div class="col selectable player" id="coord-90" data-coord="90"></div>
+					</div>
+					<div class="row">
+						<div class="col header">10</div>
+						<div class="col selectable player" id="coord-91" data-coord="91"></div>
+						<div class="col selectable player" id="coord-92" data-coord="92"></div>
+						<div class="col selectable player" id="coord-93" data-coord="93"></div>
+						<div class="col selectable player" id="coord-94" data-coord="94"></div>
+						<div class="col selectable player" id="coord-95" data-coord="95"></div>
+						<div class="col selectable player" id="coord-96" data-coord="96"></div>
+						<div class="col selectable player" id="coord-97" data-coord="97"></div>
+						<div class="col selectable player" id="coord-98" data-coord="98"></div>
+						<div class="col selectable player" id="coord-99" data-coord="99"></div>
+						<div class="col selectable player" id="coord-100" data-coord="100"></div>
+					</div>
+				</div>
+			</div>
+			<div class="column">
+				<ul class="user-selections">
+					<li>
+						<div class="columns">
+							<div class="column">
+								<h3>Turn</h3>
+								<div id="turn">-</div>
+							</div>
+							<div class="column">
+								<h3>Winner</h3>
+								<div id="winner">-</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<h3>Select a ship</h3>
+						<div id="selectable-ships"></div>
+					</li>
+					<li>
+						<h3>Orentation (Press "R" to rotate)</h3>
+						<div id="orentation"></div>
+					</li>
+					<li>
+						<button id="play" disabled>PLAY</button>
+					</li>
+				</ul>
+			</div>
+			<div class="column">
+				<h2>Enemy's Board</h2>
+				<div class="grid" id="enemy-grid">
+					<div class="row">
+							<div class="col header"></div>
+							<div class="col header">A</div>
+							<div class="col header">B</div>
+							<div class="col header">C</div>
+							<div class="col header">D</div>
+							<div class="col header">E</div>
+							<div class="col header">F</div>
+							<div class="col header">G</div>
+							<div class="col header">H</div>
+							<div class="col header">I</div>
+							<div class="col header">J</div>
+						</div>
+						<div class="row">
+							<div class="col header">01</div>
+							<div class="col selectable enemy" id="enemy-coord-1" data-coord="1"></div>
+							<div class="col selectable enemy" id="enemy-coord-2" data-coord="2"></div>
+							<div class="col selectable enemy" id="enemy-coord-3" data-coord="3"></div>
+							<div class="col selectable enemy" id="enemy-coord-4" data-coord="4"></div>
+							<div class="col selectable enemy" id="enemy-coord-5" data-coord="5"></div>
+							<div class="col selectable enemy" id="enemy-coord-6" data-coord="6"></div>
+							<div class="col selectable enemy" id="enemy-coord-7" data-coord="7"></div>
+							<div class="col selectable enemy" id="enemy-coord-8" data-coord="8"></div>
+							<div class="col selectable enemy" id="enemy-coord-9" data-coord="9"></div>
+							<div class="col selectable enemy" id="enemy-coord-10" data-coord="10"></div>
+						</div>
+						<div class="row">
+							<div class="col header">02</div>
+							<div class="col selectable enemy" id="enemy-coord-11" data-coord="11"></div>
+							<div class="col selectable enemy" id="enemy-coord-12" data-coord="12"></div>
+							<div class="col selectable enemy" id="enemy-coord-13" data-coord="13"></div>
+							<div class="col selectable enemy" id="enemy-coord-14" data-coord="14"></div>
+							<div class="col selectable enemy" id="enemy-coord-15" data-coord="15"></div>
+							<div class="col selectable enemy" id="enemy-coord-16" data-coord="16"></div>
+							<div class="col selectable enemy" id="enemy-coord-17" data-coord="17"></div>
+							<div class="col selectable enemy" id="enemy-coord-18" data-coord="18"></div>
+							<div class="col selectable enemy" id="enemy-coord-19" data-coord="19"></div>
+							<div class="col selectable enemy" id="enemy-coord-20" data-coord="20"></div>
+						</div>
+						<div class="row">
+							<div class="col header">03</div>
+							<div class="col selectable enemy" id="enemy-coord-21" data-coord="21"></div>
+							<div class="col selectable enemy" id="enemy-coord-22" data-coord="22"></div>
+							<div class="col selectable enemy" id="enemy-coord-23" data-coord="23"></div>
+							<div class="col selectable enemy" id="enemy-coord-24" data-coord="24"></div>
+							<div class="col selectable enemy" id="enemy-coord-25" data-coord="25"></div>
+							<div class="col selectable enemy" id="enemy-coord-26" data-coord="26"></div>
+							<div class="col selectable enemy" id="enemy-coord-27" data-coord="27"></div>
+							<div class="col selectable enemy" id="enemy-coord-28" data-coord="28"></div>
+							<div class="col selectable enemy" id="enemy-coord-29" data-coord="29"></div>
+							<div class="col selectable enemy" id="enemy-coord-30" data-coord="30"></div>
+						</div>
+						<div class="row">
+							<div class="col header">04</div>
+							<div class="col selectable enemy" id="enemy-coord-31" data-coord="31"></div>
+							<div class="col selectable enemy" id="enemy-coord-32" data-coord="32"></div>
+							<div class="col selectable enemy" id="enemy-coord-33" data-coord="33"></div>
+							<div class="col selectable enemy" id="enemy-coord-34" data-coord="34"></div>
+							<div class="col selectable enemy" id="enemy-coord-35" data-coord="35"></div>
+							<div class="col selectable enemy" id="enemy-coord-36" data-coord="36"></div>
+							<div class="col selectable enemy" id="enemy-coord-37" data-coord="37"></div>
+							<div class="col selectable enemy" id="enemy-coord-38" data-coord="38"></div>
+							<div class="col selectable enemy" id="enemy-coord-39" data-coord="39"></div>
+							<div class="col selectable enemy" id="enemy-coord-40" data-coord="40"></div>
+						</div>
+						<div class="row">
+							<div class="col header">05</div>
+							<div class="col selectable enemy" id="enemy-coord-41" data-coord="41"></div>
+							<div class="col selectable enemy" id="enemy-coord-42" data-coord="42"></div>
+							<div class="col selectable enemy" id="enemy-coord-43" data-coord="43"></div>
+							<div class="col selectable enemy" id="enemy-coord-44" data-coord="44"></div>
+							<div class="col selectable enemy" id="enemy-coord-45" data-coord="45"></div>
+							<div class="col selectable enemy" id="enemy-coord-46" data-coord="46"></div>
+							<div class="col selectable enemy" id="enemy-coord-47" data-coord="47"></div>
+							<div class="col selectable enemy" id="enemy-coord-48" data-coord="48"></div>
+							<div class="col selectable enemy" id="enemy-coord-49" data-coord="49"></div>
+							<div class="col selectable enemy" id="enemy-coord-50" data-coord="50"></div>
+						</div>
+						<div class="row">
+							<div class="col header">06</div>
+							<div class="col selectable enemy" id="enemy-coord-51" data-coord="51"></div>
+							<div class="col selectable enemy" id="enemy-coord-52" data-coord="52"></div>
+							<div class="col selectable enemy" id="enemy-coord-53" data-coord="53"></div>
+							<div class="col selectable enemy" id="enemy-coord-54" data-coord="54"></div>
+							<div class="col selectable enemy" id="enemy-coord-55" data-coord="55"></div>
+							<div class="col selectable enemy" id="enemy-coord-56" data-coord="56"></div>
+							<div class="col selectable enemy" id="enemy-coord-57" data-coord="57"></div>
+							<div class="col selectable enemy" id="enemy-coord-58" data-coord="58"></div>
+							<div class="col selectable enemy" id="enemy-coord-59" data-coord="59"></div>
+							<div class="col selectable enemy" id="enemy-coord-60" data-coord="60"></div>
+						</div>
+						<div class="row">
+							<div class="col header">07</div>
+							<div class="col selectable enemy" id="enemy-coord-61" data-coord="61"></div>
+							<div class="col selectable enemy" id="enemy-coord-62" data-coord="62"></div>
+							<div class="col selectable enemy" id="enemy-coord-63" data-coord="63"></div>
+							<div class="col selectable enemy" id="enemy-coord-64" data-coord="64"></div>
+							<div class="col selectable enemy" id="enemy-coord-65" data-coord="65"></div>
+							<div class="col selectable enemy" id="enemy-coord-66" data-coord="66"></div>
+							<div class="col selectable enemy" id="enemy-coord-67" data-coord="67"></div>
+							<div class="col selectable enemy" id="enemy-coord-68" data-coord="68"></div>
+							<div class="col selectable enemy" id="enemy-coord-69" data-coord="69"></div>
+							<div class="col selectable enemy" id="enemy-coord-70" data-coord="70"></div>
+						</div>
+						<div class="row">
+							<div class="col header">08</div>
+							<div class="col selectable enemy" id="enemy-coord-71" data-coord="71"></div>
+							<div class="col selectable enemy" id="enemy-coord-72" data-coord="72"></div>
+							<div class="col selectable enemy" id="enemy-coord-73" data-coord="73"></div>
+							<div class="col selectable enemy" id="enemy-coord-74" data-coord="74"></div>
+							<div class="col selectable enemy" id="enemy-coord-75" data-coord="75"></div>
+							<div class="col selectable enemy" id="enemy-coord-76" data-coord="76"></div>
+							<div class="col selectable enemy" id="enemy-coord-77" data-coord="77"></div>
+							<div class="col selectable enemy" id="enemy-coord-78" data-coord="78"></div>
+							<div class="col selectable enemy" id="enemy-coord-79" data-coord="79"></div>
+							<div class="col selectable enemy" id="enemy-coord-80" data-coord="80"></div>
+						</div>
+						<div class="row">
+							<div class="col header">09</div>
+							<div class="col selectable enemy" id="enemy-coord-81" data-coord="81"></div>
+							<div class="col selectable enemy" id="enemy-coord-82" data-coord="82"></div>
+							<div class="col selectable enemy" id="enemy-coord-83" data-coord="83"></div>
+							<div class="col selectable enemy" id="enemy-coord-84" data-coord="84"></div>
+							<div class="col selectable enemy" id="enemy-coord-85" data-coord="85"></div>
+							<div class="col selectable enemy" id="enemy-coord-86" data-coord="86"></div>
+							<div class="col selectable enemy" id="enemy-coord-87" data-coord="87"></div>
+							<div class="col selectable enemy" id="enemy-coord-88" data-coord="88"></div>
+							<div class="col selectable enemy" id="enemy-coord-89" data-coord="89"></div>
+							<div class="col selectable enemy" id="enemy-coord-90" data-coord="90"></div>
+						</div>
+						<div class="row">
+							<div class="col header">10</div>
+							<div class="col selectable enemy" id="enemy-coord-91" data-coord="91"></div>
+							<div class="col selectable enemy" id="enemy-coord-92" data-coord="92"></div>
+							<div class="col selectable enemy" id="enemy-coord-93" data-coord="93"></div>
+							<div class="col selectable enemy" id="enemy-coord-94" data-coord="94"></div>
+							<div class="col selectable enemy" id="enemy-coord-95" data-coord="95"></div>
+							<div class="col selectable enemy" id="enemy-coord-96" data-coord="96"></div>
+							<div class="col selectable enemy" id="enemy-coord-97" data-coord="97"></div>
+							<div class="col selectable enemy" id="enemy-coord-98" data-coord="98"></div>
+							<div class="col selectable enemy" id="enemy-coord-99" data-coord="99"></div>
+							<div class="col selectable enemy" id="enemy-coord-100" data-coord="100"></div>
+						</div>
+					</div>
+				</div>
+		</div>
+	</div>
+	<script src="src/index.js">
+	</script>
+</body>
+
+</html>
